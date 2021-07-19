@@ -1,0 +1,21 @@
+name: 'slack-copy'
+description: 'Copying files via slack channel out of a github action runner'
+inputs:
+  what-to-copy:  # path of the file to copy 
+    description: 'Path of the file to copy'
+    required: true
+    default: './*'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Gonna copy this file ...  ${{ inputs.what-to-copy }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+    - run: ${{ github.action_path }}/slack-copy.sh
+      shell: bash
