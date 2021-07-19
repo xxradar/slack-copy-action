@@ -10,5 +10,5 @@ runs:
   steps:
     - run: echo Gonna copy this file ...  ${{ inputs.what-to-copy }}.
       shell: bash
-    - run: ${{ github.action_path }}/slack-copy.sh
+    - run: ${{ github.action_path }}/slack-copy.sh ${{ inputs.what-to-copy }}
       shell: bash
