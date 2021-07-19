@@ -1,6 +1,6 @@
 #!/bin/bash 
 echo dadadada >test.txt
-echo $SLACK_TOKEN
+echo "This is the slack token: --" $SLACK_TOKEN "--"
 curl -F file='@test.txt'  \
      -F "initial_comment=File upload demo" \
      -F channels=alerts \
