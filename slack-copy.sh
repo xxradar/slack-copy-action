@@ -1,4 +1,5 @@
 #!/bin/bash 
+echo dadadada >test.txt
 curl -F file='@test.txt'  \
      -F "initial_comment=File upload demo" \
      -F channels=alerts \
