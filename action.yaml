@@ -5,6 +5,9 @@ inputs:
     description: 'Path of the file to copy'
     required: true
     default: './*'
+  SLACK_TOKEN:  # path of the file to copy 
+    description: 'Slack token'
+    required: true
 runs:
   using: "composite"
   steps:
