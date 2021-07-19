@@ -14,8 +14,5 @@ runs:
   steps:
     - run: echo Gonna copy this file ...  ${{ inputs.what-to-copy }}.
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
     - run: ${{ github.action_path }}/slack-copy.sh
       shell: bash
